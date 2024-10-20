@@ -5,7 +5,7 @@ import img from '@/assets/images/4.jpg'
 
 export default function Bhp() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 text-gray-900 p-8">
+    <section id='bhp' className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 text-gray-900 p-8">
       <div className="max-w-7xl mx-auto">
         <h1 className="text-4xl font-bold mb-12 text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-cyan-500">
           BEZPIECZEŃSTWO I HIGIENA PRACY
@@ -32,7 +32,7 @@ export default function Bhp() {
           
           <div className="bg-white rounded-lg shadow-lg p-6 flex flex-col justify-center">
             <Image
-              src={img}
+              src='/images/7.jpg'
               alt="Workers in safety gear"
               width={600}
               height={400}
@@ -57,6 +57,6 @@ export default function Bhp() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
