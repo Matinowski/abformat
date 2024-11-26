@@ -19,7 +19,7 @@ export default function MinimalisticPrintingAdsMotion() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="relative z-10">
             <motion.h2 
-              className="text-3xl font-bold text-gray-900 mb-6"
+              className="text-4xl font-bold text-gray-900 mb-6"
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.2, duration: 0.5 }}

@@ -51,7 +51,7 @@ export default function ProductPortfolio() {
     <section id="portfolio" className="py-16 bg-background">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto mb-16 text-center">
-          <h2 className="text-3xl font-bold mb-4">Nasze portfolio</h2>
+          <h2 className="text-4xl font-bold mb-4">Nasze portfolio</h2>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
