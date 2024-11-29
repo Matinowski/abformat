@@ -1,150 +1,78 @@
-'use client'
+"use client";
 
-import Image from 'next/image'
-import { useState } from 'react'
+import { useState } from "react";
+import { useModal } from "@/app/hooks/useModal";
+import { GalleryImage } from "./GalleryImage";
+import { Modal } from "./Modal";
 
-export default function ProductPortfolio() {
-	const [selectedCategory, setSelectedCategory] = useState(null)
-	const [enlargedImage, setEnlargedImage] = useState(null)
+const images = [
+  "/portfolio/p-01.png",
+  "/portfolio/p-02.png",
+  "/portfolio/p-03.png",
+  "/portfolio/p-04.png",
+  "/portfolio/p-05.png",
+  "/portfolio/p-06.png",
+  "/portfolio/p-07.png",
+  "/portfolio/p-08.png",
+  "/portfolio/p-09.png",
+  "/portfolio/p-10.png",
+  "/portfolio/p-11.png",
+  "/portfolio/p-12.png",
+  "/portfolio/p-13.png",
+  "/portfolio/p-14.png",
+  "/portfolio/p-15.png",
+  "/portfolio/p-16.png",
+  "/portfolio/p-17.png",
+  "/portfolio/p-18.png",
+  "/portfolio/p-19.png",
+  "/portfolio/p-20.png",
+  "/portfolio/p-21.png",
+  "/portfolio/p-22.png",
+  "/portfolio/p-23.png",
+  "/portfolio/p-24.png",
+  "/portfolio/p-25.png",
+  "/portfolio/p-26.png",
+  "/portfolio/p-27.png",
+  "/portfolio/p-28.png",
+  "/portfolio/p-29.png",
+  "/portfolio/p-30.png",
+  "/portfolio/p-31.png",
+  "/portfolio/p-32.png",
+  "/portfolio/p-33.png",
+  "/portfolio/p-34.png",
+  "/portfolio/p-35.png",
+  "/portfolio/p-36.png",
+  "/portfolio/p-37.png",
+];
 
-	const categories = [
-		{
-			name: 'Projekty ',
-			image: '/images/portfolio/Plakaty/01.png',
-			gallery: [
-				'/images/portfolio/Plakaty/01.png',
-				'/images/portfolio/Plakaty/02.png',
-				'/images/portfolio/Plakaty/03.png',
-				'/images/portfolio/Plakaty/04.png',
-				'/images/portfolio/Plakaty/05.png',
-				'/images/portfolio/Plakaty/06.png',
-			],
-		},
-		{
-			name: 'Realizacje',
-			image: '/images/portfolio/Realizacje/05.png',
-			gallery: [
-				'/images/portfolio/Realizacje/01.png',
-				'/images/portfolio/Realizacje/02.png',
-				'/images/portfolio/Realizacje/03.png',
-				'/images/portfolio/Realizacje/04.png',
-				'/images/portfolio/Realizacje/05.png',
-			],
-		},
-		{
-			name: 'BHP',
-			image: '/images/portfolio/BHP/04.png',
-			gallery: [
-				'/images/portfolio/BHP/01.png',
-				'/images/portfolio/BHP/02.png',
-				'/images/portfolio/BHP/03.png',
-				'/images/portfolio/BHP/04.png',
-			],
-		},
-		{
-			name: 'Reklama zewnętrzna',
-			image: '/images/portfolio/Loga/05.png',
-			gallery: [
-				'/images/portfolio/Loga/01.png',
-				'/images/portfolio/Loga/02.png',
-				'/images/portfolio/Loga/03.png',
-				'/images/portfolio/Loga/04.png',
-				'/images/portfolio/Loga/05.png',
-			],
-		},
-	]
+export function Portfolio() {
+  const { isOpen, selectedImage, openModal, closeModal } = useModal();
+  const [expanded, setExpanded] = useState(false);
+  const visibleImages = expanded ? images : images.slice(0, 6);
 
-	const handleCategoryClick = category => {
-		setSelectedCategory(category)
-	}
-
-	const closeModal = () => {
-		setSelectedCategory(null)
-	}
-
-	const handleImageClick = image => {
-		setEnlargedImage(image)
-	}
-
-	const closeEnlargedImage = () => {
-		setEnlargedImage(null)
-	}
-
-	return (
-		<section id='portfolio' className='py-16 bg-background'>
-			<div className='container mx-auto px-4'>
-				<div className='max-w-3xl mx-auto mb-16 text-center'>
-					<h2 className='text-4xl font-bold mb-4'>Nasze portfolio</h2>
-				</div>
-
-				<div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8'>
-					{categories.map((category, index) => (
-						<div key={index} className='group' onClick={() => handleCategoryClick(category)}>
-							<div className='relative overflow-hidden rounded-lg shadow-md cursor-pointer'>
-								<Image
-									src={category.image}
-									alt={category.name}
-									width={400}
-									height={300}
-									className='w-full h-auto transition-transform duration-300 group-hover:scale-110'
-								/>
-								<div className='absolute inset-0 bg-black bg-opacity-40 transition-opacity duration-300 opacity-0 group-hover:opacity-100 flex items-center justify-center'>
-									<h3 className='text-white text-2xl font-semibold'>{category.name}</h3>
-								</div>
-							</div>
-							<div className='mt-4'>
-								<h3 className='text-xl font-semibold mb-2'>{category.name}</h3>
-								{/* <p className="text-muted-foreground">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat fugit mollitia quasi sapiente sit eligendi praesentium amet, quo dolor dignissimos?
-                </p> */}
-							</div>
-						</div>
-					))}
-				</div>
-			</div>
-
-			{/* Category Modal Pop-up */}
-			{selectedCategory && (
-				<div className='fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50'>
-					<div className='bg-white p-6 rounded-lg shadow-lg max-w-3xl w-full'>
-						<div className='flex justify-between items-center mb-4'>
-							<h3 className='text-2xl font-bold'>{selectedCategory.name} Galeria</h3>
-							<button onClick={closeModal} className='text-xl font-bold'>
-								&times;
-							</button>
-						</div>
-						<div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4'>
-							{selectedCategory.gallery.map((image, idx) => (
-								<div key={idx} className='cursor-pointer' onClick={() => handleImageClick(image)}>
-									<Image
-										src={image}
-										alt={`${selectedCategory.name} Image ${idx + 1}`}
-										width={600}
-										height={400}
-										className='w-full h-auto rounded-lg transition-transform duration-300 hover:scale-105'
-									/>
-								</div>
-							))}
-						</div>
-					</div>
-				</div>
-			)}
-
-			{/* Enlarged Image Modal */}
-			{enlargedImage && (
-				<div
-					className='fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50'
-					onClick={closeEnlargedImage}>
-					<div className='relative max-w-4xl w-full h-full flex items-center justify-center'>
-						<Image src={enlargedImage} alt='Enlarged Image' layout='fill' objectFit='contain' className='rounded-lg' />
-						<button
-							onClick={closeEnlargedImage}
-							className='absolute top-4 right-4 text-white text-2xl font-bold bg-black bg-opacity-50 w-10 h-10 rounded-full flex items-center justify-center'>
-							&times;
-						</button>
-					</div>
-				</div>
-			)}
-		</section>
-	)
+  return (
+    <div className="container mx-auto px-4 py-8">
+      <h2 className="mb-6 text-4xl font-bold text-center text-gray-600">Portfolio</h2>
+      <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
+        {visibleImages.map((src, index) => (
+          <GalleryImage
+            key={index}
+            src={src}
+            alt={`Zdjęcie w galerii ${index + 1}`}
+            onClick={() => openModal(src)}
+          />
+        ))}
+      </div>
+      {!expanded && (
+        <div className="mt-6 text-center">
+          <button onClick={() => setExpanded(true)}>Pokaż więcej</button>
+        </div>
+      )}
+      <Modal
+        isOpen={isOpen}
+        onClose={closeModal}
+        imageSrc={selectedImage || ""}
+      />
+    </div>
+  );
 }

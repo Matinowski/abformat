@@ -7,7 +7,7 @@ export default function Component() {
 			id='info'
 			className='bg-background text-foreground min-h-screen flex flex-col justify-center items-center p-4 sm:p-8'>
 			<div className='max-w-6xl w-full space-y-8'>
-				<h1 className='text-2xl sm:text-4xl font-bold text-center mb-8'>
+				<h1 className='text-2xl sm:text-4xl font-bold text-center mb-8 text-gray-600 '>
 					NIE ZASTANAWIAJ SIĘ...
 					<br />
 					WYBIERZ SPRAWDZONEGO PARTNERA

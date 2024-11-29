@@ -18,7 +18,7 @@ export default function MinimalisticPrintingAdsMotion() {
 				<div className='grid grid-cols-1 md:grid-cols-2 gap-12 items-center'>
 					<div className='relative z-10'>
 						<motion.h2
-							className='text-4xl font-bold text-gray-900 mb-6'
+							className='text-4xl font-bold text-gray-600 mb-6'
 							initial={{ opacity: 0, x: -20 }}
 							animate={{ opacity: 1, x: 0 }}
 							transition={{ delay: 0.2, duration: 0.5 }}>
@@ -33,7 +33,7 @@ export default function MinimalisticPrintingAdsMotion() {
 								'Usługi poligraficzne, projektowanie graficzne, skład komputerowy',
 								'Druki reklamowe, ulotki, foldery, wizytówki, papiery firmowe',
 								'Pieczątki, laminowanie, bindowanie',
-								'Gadżety reklamowe, np. parasole, kubki, smycze, torby',
+								'Gadżety reklamowe',
 								'Szyldy, tablice, kasetony, litery przestrzenne',
 								'Reklama zewnętrzna: banery, flagi, siatki, tablice',
 								'Reklama na samochodach',
@@ -51,20 +51,25 @@ export default function MinimalisticPrintingAdsMotion() {
 								</motion.li>
 							))}
 						</motion.ul>
-						<motion.button
-							className='mt-8 inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-blue-900 hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500'
+						<motion.a
+							className='mt-8 mr-8 inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-blue-900 hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500'
 							whileHover={{ scale: 1.05 }}
-							whileTap={{ scale: 0.95 }}>
+							whileTap={{ scale: 0.95 }}
+              href='https://katalogkalendarzy.pl'
+              >
+                
 							Katalog Kalendarzy
 							<ArrowRight className='ml-2 -mr-1 h-5 w-5' />
-						</motion.button>
-						<motion.button
-							className='mt-8 ml-8 inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-blue-900 hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500'
+						</motion.a>
+						<motion.a
+							className='mt-8 inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-blue-900 hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500'
 							whileHover={{ scale: 1.05 }}
-							whileTap={{ scale: 0.95 }}>
+							whileTap={{ scale: 0.95 }}
+              href='https://view.publitas.com/md-pl/12_24-1-gifts_pol_pln_vr/page/1'
+              >
 							Katalog Gadżetów Reklamowych
 							<ArrowRight className='ml-2 -mr-1 h-5 w-5' />
-						</motion.button>
+						</motion.a>
 					</div>
 					<motion.div
 						className='relative'

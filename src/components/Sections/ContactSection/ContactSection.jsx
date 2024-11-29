@@ -28,7 +28,7 @@ export default function ContactSection() {
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.5 }}
 					className='text-center mb-12'>
-					<h2 className='text-4xl font-bold text-white sm:text-4xl'>Kontakt</h2>
+					<h2 className='text-4xl font-bold text-white sm:text-4xl text-gray-600'>Kontakt</h2>
 					<p className='mt-4 text-xl text-white'>Skontaktuj się z nami - porozmawiajmy!</p>
 				</motion.div>
 

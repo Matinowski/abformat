@@ -26,7 +26,7 @@ export default function Maintenance() {
 	return (
 		<section id='maintenace' className='bg-gradient-to-r from-gray-100 to-gray-200 py-16'>
 			<div className='container mx-auto px-4'>
-				<h2 className='text-4xl font-bold mb-12 text-gray-800 border-b-2 border-gray-400 pb-4'>UTRZYMANIE RUCHU</h2>
+				<h2 className='text-4xl font-bold mb-12  border-b-2 border-gray-400 text-gray-600 pb-4'>UTRZYMANIE RUCHU</h2>
 				<div className='flex flex-col lg:flex-row justify-between items-start gap-12'>
 					<div className='flex-1 space-y-6'>
 						<ul className='space-y-3 text-gray-700'>

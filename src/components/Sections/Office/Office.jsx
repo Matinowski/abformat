@@ -48,7 +48,7 @@ export default function Office() {
 		<section id='office' className='min-h-screen bg-white text-gray-800 p-4 md:p-8'>
 			<div className='max-w-7xl mx-auto'>
 				<header className='mb-12 relative'>
-					<h1 className='text-4xl md:text-6xl font-bold tracking-tighter'>
+					<h1 className='text-4xl md:text-6xl font-bold tracking-tighter text-gray-600' >
 						ZAOPATRZENIE
 						<br />
 						<span className='text-7xl md:text-8xl cyan'>BIURA</span>
